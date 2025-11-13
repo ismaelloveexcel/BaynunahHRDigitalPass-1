@@ -1,0 +1,59 @@
+{
+  "passes": {
+    "candidate": {
+      "sections": [
+        "cvStatus",
+        "score",
+        "aiSuggestions",
+        "interviewUpdates",
+        "documentChecklist",
+        "offerStatus"
+      ],
+      "allowedActions": [
+        "uploadDocuments",
+        "confirmInterview",
+        "viewOffer"
+      ]
+    },
+    "employee": {
+      "sections": [
+        "attendance",
+        "leaveBalance",
+        "leaveRequest",
+        "documentRequests",
+        "reimbursements",
+        "announcements"
+      ],
+      "allowedActions": [
+        "clockIn",
+        "clockOut",
+        "applyLeave",
+        "requestDocument"
+      ]
+    },
+    "manager": {
+      "sections": [
+        "jobRequests",
+        "shortlistCandidates",
+        "interviewFeedback",
+        "finalApproval"
+      ],
+      "allowedActions": [
+        "shortlist",
+        "scheduleInterview",
+        "submitFeedback",
+        "finalizeCandidate"
+      ]
+    },
+    "agency": {
+      "sections": [
+        "uploadCandidates",
+        "tracking",
+        "commissionStatus"
+      ],
+      "allowedActions": [
+        "submitCandidate"
+      ]
+    }
+  }
+}

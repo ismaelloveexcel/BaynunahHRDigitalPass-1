@@ -1,0 +1,41 @@
+{
+  "collections": {
+    "candidates": {
+      "id": "string",
+      "fullName": "string",
+      "firstName": "string",
+      "email": "string",
+      "phone": "string",
+      "cvUrl": "string",
+      "cvScore": "number",
+      "skills": "array",
+      "currentStage": "string",
+      "managerFeedback": "array",
+      "agencySource": "string"
+    },
+    "employees": {
+      "id": "string",
+      "employeeNumber": "string",
+      "fullName": "string",
+      "jobTitle": "string",
+      "department": "string",
+      "leaveBalance": "number",
+      "attendance": "array",
+      "requests": "array"
+    },
+    "managers": {
+      "id": "string",
+      "fullName": "string",
+      "department": "string",
+      "openRequests": "array",
+      "shortlistedCandidates": "array"
+    },
+    "agencies": {
+      "id": "string",
+      "name": "string",
+      "contactPerson": "string",
+      "email": "string",
+      "submittedCandidates": "array"
+    }
+  }
+}

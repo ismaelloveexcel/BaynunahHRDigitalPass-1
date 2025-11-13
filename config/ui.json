@@ -1,0 +1,36 @@
+{
+  "landing": {
+    "headerLogo": "/assets/baynunah-logo.png",
+    "cards": [
+      {
+        "label": "Applicants",
+        "icon": "/icons/applicant.png",
+        "target": "/applicants",
+        "type": "glassCard"
+      },
+      {
+        "label": "Employees",
+        "icon": "/icons/employee.png",
+        "target": "/employees",
+        "type": "glassCard"
+      },
+      {
+        "label": "Managers",
+        "icon": "/icons/manager.png",
+        "target": "/managers",
+        "type": "glassCard"
+      }
+    ],
+    "footerText": "Powered by HR |IS| Baynunah 2025"
+  },
+  "components": {
+    "glassCard": {
+      "background": "rgba(255,255,255,0.55)",
+      "backdropFilter": "blur(20px)",
+      "border": "1px solid rgba(255,255,255,0.2)",
+      "shadow": "0 8px 25px rgba(51,179,237,0.35)",
+      "hoverShadow": "0 8px 30px rgba(51,179,237,0.55)",
+      "hoverScale": "1.03"
+    }
+  }
+}

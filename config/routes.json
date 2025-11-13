@@ -1,0 +1,14 @@
+{
+  "routes": [
+    { "path": "/", "component": "LandingPage" },
+    { "path": "/applicants", "component": "ApplicantHome" },
+    { "path": "/employees", "component": "EmployeeHome" },
+    { "path": "/managers", "component": "ManagerPortal" },
+    { "path": "/agencies", "component": "AgencyPortal" },
+    { "path": "/upload-cv", "component": "UploadCV" },
+    { "path": "/candidate-pass/:id", "component": "CandidatePass" },
+    { "path": "/employee-pass/:id", "component": "EmployeePass" },
+    { "path": "/manager-pass/:id", "component": "ManagerPass" },
+    { "path": "/agency-pass/:id", "component": "AgencyPass" }
+  ]
+}

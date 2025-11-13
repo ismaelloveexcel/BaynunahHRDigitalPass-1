@@ -1,0 +1,30 @@
+{
+  "theme": {
+    "colors": {
+      "primary": "#002b5c",
+      "accent": "#33b3ed",
+      "background": "#ffffff",
+      "card": "rgba(255,255,255,0.55)",
+      "cardBorder": "rgba(255,255,255,0.2)",
+      "cardShadow": "rgba(51,179,237,0.35)"
+    },
+    "fonts": {
+      "header": "Sora, sans-serif",
+      "body": "Inter, sans-serif"
+    },
+    "effects": {
+      "glass": {
+        "blur": "20px",
+        "radius": "22px"
+      },
+      "hover": {
+        "scale": "1.03",
+        "shadow": "0 6px 18px rgba(51,179,237,0.4)"
+      }
+    },
+    "branding": {
+      "logo": "/assets/baynunah-logo.png",
+      "footer": "Powered by HR |IS| Baynunah 2025"
+    }
+  }
+}
