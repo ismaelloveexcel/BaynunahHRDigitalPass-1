@@ -1,0 +1,49 @@
+name: Deploy Baynunah HR Digital Pass
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use Node 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Build front-end
+      - name: Build client
+        run: |
+          cd client
+          npm install
+          npm run build
+
+      # Build backend
+      - name: Build server
+        run: |
+          cd server
+          npm install
+          npm run build
+
+      # Copy front-end build into backend
+      - name: Copy client build
+        run: |
+          rm -rf server/public
+          mkdir server/public
+          cp -r client/dist/* server/public
+
+      # Deploy to Azure
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: BaynunahHRDigitalPass-1
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          package: server
+
