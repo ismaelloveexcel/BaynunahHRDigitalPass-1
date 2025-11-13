@@ -3,6 +3,7 @@ import { db } from '../db/index.js';
 import { candidates, employees, agencies } from '../db/schema.js';
 import { eq } from 'drizzle-orm';
 import { isAuthenticated } from '../middleware/auth.js';
+import { generatePassQRCode } from '../services/qr.service.js';
 
 const router = express.Router();
 
@@ -71,6 +72,22 @@ router.get('/:passId', async (req, res) => {
   } catch (error) {
     console.error('Get pass error:', error);
     res.status(500).json({ error: 'Failed to get pass' });
+  }
+});
+
+// Generate QR code for pass
+router.get('/:passId/qr', async (req, res) => {
+  try {
+    const { passId } = req.params;
+    
+    // Generate QR code
+    const qrCodeDataUrl = await generatePassQRCode(passId);
+    
+    // Return as JSON with data URL
+    res.json({ qrCode: qrCodeDataUrl, passId });
+  } catch (error) {
+    console.error('Generate QR error:', error);
+    res.status(500).json({ error: 'Failed to generate QR code' });
   }
 });
 

@@ -15,6 +15,7 @@ import employeeRoutes from './routes/employee.routes.js';
 import hrRoutes from './routes/hr.routes.js';
 import agencyRoutes from './routes/agency.routes.js';
 import passRoutes from './routes/pass.routes.js';
+import analyticsRoutes from './routes/analytics.routes.js';
 
 const app = express();
 const httpServer = createServer(app);
@@ -68,6 +69,7 @@ app.use('/api/employees', employeeRoutes);
 app.use('/api/hr', hrRoutes);
 app.use('/api/agencies', agencyRoutes);
 app.use('/api/pass', passRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 // WebSocket handling for real-time updates
 wss.on('connection', (ws) => {
