@@ -5,6 +5,7 @@ import { eq, and } from 'drizzle-orm';
 import { isAuthenticated, hasRole } from '../middleware/auth.js';
 import { upload } from '../middleware/upload.js';
 import { parseCVFromPDF, calculateAIScore, matchCandidateToJob } from '../services/ai.service.js';
+import { sendPassCreatedEmail, sendOfferEmail, sendStatusUpdateEmail } from '../services/email.service.js';
 import { broadcast } from '../index.js';
 
 const router = express.Router();
@@ -42,6 +43,13 @@ router.post('/apply', isAuthenticated, upload.single('cv'), async (req, res) => 
         experience: cvParsedData.experience,
         education: cvParsedData.education,
       }).returning();
+
+      // Send welcome email with pass ID
+      sendPassCreatedEmail(
+        user.email,
+        `${user.firstName} ${user.lastName}`,
+        passId
+      ).catch(console.error);
     }
 
     // Get job details

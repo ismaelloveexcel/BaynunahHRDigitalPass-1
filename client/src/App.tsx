@@ -12,6 +12,7 @@ import ManagerPass from '@/pages/ManagerPass';
 import AgencyPass from '@/pages/AgencyPass';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
+import HRDashboard from '@/pages/HRDashboard';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/employee-pass/:id" component={EmployeePass} />
         <Route path="/manager-pass/:id" component={ManagerPass} />
         <Route path="/agency-pass/:id" component={AgencyPass} />
+        <Route path="/hr/dashboard" component={HRDashboard} />
         <Route>404 - Page Not Found</Route>
       </Switch>
       <Toaster />
